@@ -229,12 +229,42 @@ Implementing these recommendations could significantly improve:
 
 ---
 
-## Next Steps
+# Strategic Recommendations
 
-1. **Pilot Testing:** Implement recommendations in one hotel to measure impact
-2. **Track Metrics:** Monitor cancellation rates by channel and country
-3. **Review Quarterly:** Adjust strategies based on results
-4. **Expand Analysis:** Include customer satisfaction and repeat booking data
+## Immediate Actions (Next 30 Days)
+
+### 1. Launch Portugal-Focused Retention Campaign
+- Partner with Portuguese travel agencies
+- Improve Portuguese language support
+- Create special offers for Portuguese market
+
+### 2. Implement Tiered Cancellation Policies
+- Offer discounts for non-refundable bookings
+- Introduce flexible rebooking options
+- Create premium packages with flexible terms
+
+### 3. Focus on City Hotel Retention
+- Develop corporate loyalty programs
+- Offer booking guarantees for business travelers
+- Implement pre-arrival confirmation system
+
+## Medium-Term Strategies (3-6 Months)
+
+### 4. Optimize Online Booking Channels
+- Work with OTAs to improve booking quality
+- Incentivize direct bookings with exclusive perks
+- Implement booking verification systems
+
+### 5. Dynamic Pricing Implementation
+- Adjust prices based on cancellation risk profiles
+- Offer seasonal promotions with commitment terms
+- Test different pricing strategies by market segment
+
+### 6. Data-Driven Decision Making
+- Implement real-time cancellation tracking dashboard
+- Develop predictive models for cancellation risk
+- Conduct regular monthly analysis of booking patterns
+
 
 ---
 
