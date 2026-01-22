@@ -14,7 +14,7 @@ K
 
 ### 1. **The Cancellation Crisis: 37% of Revenue at Risk**
 
-![Booking Cancellation Distribution](report_images/1_cancellation_distribution.png)
+![Booking Cancellation Distribution](https://github.com/muhammad102331-hash/Hotel_Booking/blob/main/%F0%9F%93%88%20Visual%20Assets/report_images/1_cancellation_distribution.png)
 
 **The Story:**
 Looking at our booking data, we discovered a startling reality - **37 out of every 100 bookings are canceled**. The bar chart reveals this stark contrast: while 63,000+ bookings were completed successfully, nearly 37,000 guests changed their minds and canceled.
@@ -31,7 +31,7 @@ The chart shows two towering bars - the blue (not canceled) significantly higher
 
 ### 2. **Tale of Two Hotels: Why City Hotels Struggle More**
 
-![Reservation Status by Hotel Type](report_images/2_hotel_comparison.png)
+![Reservation Status by Hotel Type](https://github.com/muhammad102331-hash/Hotel_Booking/blob/main/%F0%9F%93%88%20Visual%20Assets/report_images/2_hotel_comparison.png)
 
 **The Story:**
 When we compared our City Hotels to Resort Hotels, a clear pattern emerged. City Hotels are experiencing a **42% cancellation rate** compared to Resort Hotels' **28%**. 
