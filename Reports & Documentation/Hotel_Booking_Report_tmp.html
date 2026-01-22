@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hotel_Booking_Report.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="hotel-booking-analysis-report">Hotel Booking Analysis Report</h1>
+<p><strong>Presented by: Syed Muhammad Ali</strong><br>
+<strong>Date: January 22, 2026</strong></p>
+<hr>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This report analyzes <strong>119,391 hotel booking records</strong> from Resort and City Hotels to understand booking patterns, cancellation trends, and revenue opportunities. Our analysis reveals critical insights that can help improve booking retention and optimize pricing strategies.</p>
+<hr>
+<p>K</p>
+<h2 id="key-findings-with-visual-insights">Key Findings with Visual Insights</h2>
+<h3 id="1-the-cancellation-crisis-37-of-revenue-at-risk">1. <strong>The Cancellation Crisis: 37% of Revenue at Risk</strong></h3>
+<p><img src="file:///e:/Project/Hotel_Booking/report_images/1_cancellation_distribution.png" alt="Booking Cancellation Distribution"></p>
+<p><strong>The Story:</strong>
+Looking at our booking data, we discovered a startling reality - <strong>37 out of every 100 bookings are canceled</strong>. The bar chart reveals this stark contrast: while 63,000+ bookings were completed successfully, nearly 37,000 guests changed their minds and canceled.</p>
+<p><strong>What This Means:</strong></p>
+<ul>
+<li>Imagine filling 370 rooms in a 1,000-room hotel, only to have them suddenly become empty</li>
+<li>This creates a domino effect: lost revenue, wasted resources, and missed opportunities to fill those rooms</li>
+<li>Staff planning becomes challenging when you can't predict actual occupancy</li>
+</ul>
+<p><strong>The Visual Impact:</strong>
+The chart shows two towering bars - the blue (not canceled) significantly higher than the orange (canceled), but the orange bar is still alarmingly large. This isn't a minor issue; it's a business-critical challenge.</p>
+<hr>
+<h3 id="2-tale-of-two-hotels-why-city-hotels-struggle-more">2. <strong>Tale of Two Hotels: Why City Hotels Struggle More</strong></h3>
+<p><img src="file:///e:/Project/Hotel_Booking/report_images/2_hotel_comparison.png" alt="Reservation Status by Hotel Type"></p>
+<p><strong>The Story:</strong>
+When we compared our City Hotels to Resort Hotels, a clear pattern emerged. City Hotels are experiencing a <strong>42% cancellation rate</strong> compared to Resort Hotels' <strong>28%</strong>.</p>
+<p><strong>What the Data Reveals:</strong>
+The side-by-side comparison shows that while both hotel types receive significant bookings, City Hotels see a much larger proportion colored in the &quot;canceled&quot; shade. This 14-percentage-point difference represents thousands of lost room-nights.</p>
+<p><strong>Why This Happens:</strong></p>
+<ul>
+<li>Business travelers (who prefer City Hotels) have more flexible schedules</li>
+<li>Corporate bookings often change due to meeting cancellations</li>
+<li>Resort guests (vacation travelers) are more committed to their plans</li>
+<li>Leisure travelers have made emotional investments in their trips</li>
+</ul>
+<p><strong>Business Impact:</strong>
+City Hotels need different strategies than Resort Hotels - one-size-fits-all policies won't work.</p>
+<hr>
+<h3 id="3-the-price-story-following-the-money-across-time">3. <strong>The Price Story: Following the Money Across Time</strong></h3>
+<p><img src="file:///e:/Project/Hotel_Booking/report_images/3_adr_by_hotel.png" alt="Average Daily Rate Trends"></p>
+<p><strong>The Story:</strong>
+When we tracked room prices over three years (2015-2017), an interesting pattern emerged. Both hotel types maintain competitive pricing, with rates hovering around similar ranges, but City Hotels (orange line) show more volatility than the steadier Resort Hotels (green line).</p>
+<p><strong>Reading the Chart:</strong></p>
+<ul>
+<li>The green line (Resort Hotel) flows relatively smoothly, showing vacation travelers are more predictable</li>
+<li>The orange line (City Hotel) has more spikes and valleys, reflecting business travel's unpredictable nature</li>
+<li>Both lines trend together, suggesting market-wide factors affect pricing</li>
+</ul>
+<p><strong>Key Observations:</strong></p>
+<ul>
+<li>Prices range from $50 to $150+ per night across both properties</li>
+<li>Seasonal peaks are visible but manageable</li>
+<li>Neither hotel is dramatically overpricing or underpricing</li>
+</ul>
+<p><strong>Strategic Insight:</strong>
+The pricing itself isn't the problem - it's competitive. The challenge lies in matching the right price to the right guest at the right time.</p>
+<hr>
+<h3 id="4-seasonal-patterns-the-rhythm-of-bookings">4. <strong>Seasonal Patterns: The Rhythm of Bookings</strong></h3>
+<p><img src="file:///e:/Project/Hotel_Booking/report_images/4_monthly_cancellations.png" alt="Monthly Booking Cancellations"></p>
+<p><strong>The Story:</strong>
+This monthly view reveals the heartbeat of our booking business. Watch how the blue (not canceled) and orange (canceled) bars rise and fall together throughout the year.</p>
+<p><strong>Monthly Booking Trends:</strong></p>
+<ul>
+<li><strong>Peak Season:</strong> Summer months (June-August) have highest bookings AND highest cancellations</li>
+<li><strong>Low Season:</strong> Winter months (December-February) have fewer bookings overall</li>
+<li>Cancellations follow booking volume - more bookings = more cancellations</li>
+</ul>
+<p><strong>Strategic Insight:</strong></p>
+<ul>
+<li>Focus retention efforts during peak booking months when stakes are highest</li>
+<li>Implement flexible policies during low season to maintain occupancy</li>
+<li>Prepare for cancellation surges before summer season</li>
+</ul>
+<hr>
+<h3 id="5-geographic-analysis-the-portugal-problem">5. <strong>Geographic Analysis: The Portugal Problem</strong></h3>
+<p><img src="file:///e:/Project/Hotel_Booking/report_images/5_top_countries.png" alt="Top 10 Countries with Cancellations"></p>
+<p><strong>The Striking Visual:</strong>
+The pie chart reveals something shocking - a massive slice (70.8%) belongs to Portugal. This single country dominates cancellations, making all other countries look tiny in comparison.</p>
+<p><strong>Top 10 Countries by Cancellation Volume:</strong></p>
+<ol>
+<li><strong>Portugal (PRT)</strong> - 70.8% of all cancellations (CRITICAL ISSUE)</li>
+<li><strong>Great Britain (GBR)</strong> - 6.1%</li>
+<li><strong>Spain (ESP)</strong> - 5.0%</li>
+<li><strong>France (FRA)</strong> - 4.8%</li>
+<li><strong>Germany (DEU)</strong> - 3.4%</li>
+<li><strong>Italy (ITA)</strong> - 3.1%</li>
+<li><strong>Ireland (IRL)</strong> - 2.1%</li>
+<li><strong>Brazil (BRA)</strong> - 2.1%</li>
+<li><strong>Belgium (BEL)</strong> - 1.9%</li>
+<li><strong>USA</strong> - 1.9%</li>
+</ol>
+<p><strong>Action Items:</strong></p>
+<ul>
+<li>Develop targeted retention programs for Portuguese guests</li>
+<li>Consider cultural preferences in booking policies</li>
+<li>Offer incentives for guests from high-cancellation countries</li>
+</ul>
+<hr>
+<h3 id="6-booking-channel-analysis">6. <strong>Booking Channel Analysis</strong></h3>
+<p><strong>Where Bookings Come From:</strong></p>
+<p><strong>All Bookings:</strong></p>
+<ul>
+<li>Online Travel Agencies (TA): 47%</li>
+<li>Groups: 19%</li>
+<li>Direct bookings: 12%</li>
+<li>Offline TA/Tour Operators: 11%</li>
+<li>Corporate: 4%</li>
+</ul>
+<p><strong>Canceled Bookings:</strong></p>
+<ul>
+<li>Online Travel Agencies: 45.6% (highest cancellation source)</li>
+<li>Groups: 28.2%</li>
+<li>Offline TA/TO: 19.4%</li>
+<li>Direct: 4.1%</li>
+<li>Corporate: 2.3%</li>
+</ul>
+<p><strong>Insight:</strong> Online channels drive both bookings and cancellations</p>
+<hr>
+<h3 id="7-price-comparison-the-cancellation-price-connection">7. <strong>Price Comparison: The Cancellation-Price Connection</strong></h3>
+<p><img src="file:///e:/Project/Hotel_Booking/report_images/6_adr_comparison.png" alt="ADR: Cancelled vs Not Cancelled (2016-2017)"></p>
+<p><strong>What the Chart Reveals:</strong>
+The red line (canceled bookings) and green line (completed bookings) tell parallel stories with an interesting twist - they move together, but the red line often sits slightly higher.</p>
+<p><strong>Key Finding:</strong></p>
+<ul>
+<li>Canceled bookings generally have <strong>slightly higher prices</strong> than completed bookings</li>
+<li>The lines follow similar patterns but never quite touch</li>
+<li>Price sensitivity may be a factor in cancellation decisions</li>
+<li>Pattern is consistent across 2016-2017</li>
+</ul>
+<p><strong>What This Means:</strong></p>
+<ul>
+<li>Higher prices = Higher risk of cancellation</li>
+<li>Premium bookings need extra attention and retention efforts</li>
+<li>Price-conscious guests are more committed to their bookings</li>
+</ul>
+<p><strong>Business Implication:</strong></p>
+<ul>
+<li>Consider flexible pricing tiers with different cancellation terms</li>
+<li>Offer incentives for non-refundable premium bookings</li>
+<li>Create loyalty rewards to offset price concerns for high-value reservations</li>
+</ul>
+<hr>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="immediate-actions">Immediate Actions</h3>
+<ol>
+<li>
+<p><strong>Reduce Online Booking Cancellations</strong></p>
+<ul>
+<li>Partner with OTAs to improve booking quality</li>
+<li>Implement pre-booking confirmation systems</li>
+<li>Offer incentives for non-refundable bookings</li>
+</ul>
+</li>
+<li>
+<p><strong>Target Portuguese Market</strong></p>
+<ul>
+<li>Since Portugal represents 70% of cancellations</li>
+<li>Review booking terms and conditions</li>
+<li>Provide better communication in Portuguese</li>
+<li>Understand cultural booking behaviors</li>
+</ul>
+</li>
+<li>
+<p><strong>City Hotel Focus</strong></p>
+<ul>
+<li>Implement stricter cancellation policies</li>
+<li>Offer loyalty programs to reduce business traveler cancellations</li>
+<li>Provide booking flexibility with minimal fees</li>
+</ul>
+</li>
+</ol>
+<h3 id="medium-term-strategies">Medium-Term Strategies</h3>
+<ol start="4">
+<li>
+<p><strong>Dynamic Pricing Strategy</strong></p>
+<ul>
+<li>Adjust prices based on cancellation risk</li>
+<li>Offer discounts for advance, non-refundable bookings</li>
+<li>Premium pricing for flexible cancellation options</li>
+</ul>
+</li>
+<li>
+<p><strong>Seasonal Campaigns</strong></p>
+<ul>
+<li>Launch retention campaigns during peak months</li>
+<li>Offer incentives during low season to boost occupancy</li>
+<li>Create packages that encourage commitment</li>
+</ul>
+</li>
+<li>
+<p><strong>Channel Optimization</strong></p>
+<ul>
+<li>Balance between volume and quality from OTAs</li>
+<li>Encourage direct bookings with better rates</li>
+<li>Build relationships with corporate clients (lowest cancellation rate)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="data-quality-notes">Data Quality Notes</h2>
+<p><strong>Data Cleaned and Processed:</strong></p>
+<ul>
+<li>Removed extreme price outliers for accurate analysis</li>
+<li>Handled missing values in guest demographics</li>
+<li>Analyzed 119,391 booking records spanning 2015-2017</li>
+<li>All dates properly formatted and validated</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The hotel booking data reveals significant opportunities for revenue optimization through:</p>
+<ul>
+<li><strong>Cancellation reduction strategies</strong> (potential 37% revenue recovery)</li>
+<li><strong>Channel optimization</strong> (focus on high-quality bookings)</li>
+<li><strong>Geographic targeting</strong> (especially Portuguese market)</li>
+<li><strong>Dynamic pricing</strong> (balancing price and cancellation risk)</li>
+</ul>
+<p>Implementing these recommendations could significantly improve:</p>
+<ul>
+<li>Revenue stability and forecasting accuracy</li>
+<li>Operational efficiency in room management</li>
+<li>Customer satisfaction through better-matched pricing</li>
+<li>Overall profitability</li>
+</ul>
+<hr>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li><strong>Pilot Testing:</strong> Implement recommendations in one hotel to measure impact</li>
+<li><strong>Track Metrics:</strong> Monitor cancellation rates by channel and country</li>
+<li><strong>Review Quarterly:</strong> Adjust strategies based on results</li>
+<li><strong>Expand Analysis:</strong> Include customer satisfaction and repeat booking data</li>
+</ol>
+<hr>
+<p><strong>For questions or detailed analysis, please contact:</strong><br>
+<strong>Syed Muhammad Ali</strong><br>
+<em>Data Analyst</em></p>
+
+</body>
+</html>

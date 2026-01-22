@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Environment
+.env
+.venv
+
+# VS Code
+.vscode/
+
+# Data files (uncomment if you don't want to upload the dataset)
+# hotel_booking.csv
+
+# Temporary files
+*.tmp
+*_tmp.*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
