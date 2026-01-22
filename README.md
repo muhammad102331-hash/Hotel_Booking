@@ -52,7 +52,7 @@ City Hotels need different strategies than Resort Hotels - one-size-fits-all pol
 
 ### 3. **The Price Story: Following the Money Across Time**
 
-![Average Daily Rate Trends](report_images/3_adr_by_hotel.png)
+![Average Daily Rate Trends](https://github.com/muhammad102331-hash/Hotel_Booking/blob/main/%F0%9F%93%88%20Visual%20Assets/report_images/3_adr_by_hotel.png)
 
 **The Story:**
 When we tracked room prices over three years (2015-2017), an interesting pattern emerged. Both hotel types maintain competitive pricing, with rates hovering around similar ranges, but City Hotels (orange line) show more volatility than the steadier Resort Hotels (green line).
@@ -74,7 +74,7 @@ The pricing itself isn't the problem - it's competitive. The challenge lies in m
 
 ### 4. **Seasonal Patterns: The Rhythm of Bookings**
 
-![Monthly Booking Cancellations](report_images/4_monthly_cancellations.png)
+![Monthly Booking Cancellations](https://github.com/muhammad102331-hash/Hotel_Booking/blob/main/%F0%9F%93%88%20Visual%20Assets/report_images/4_monthly_cancellations.png)
 
 **The Story:**
 This monthly view reveals the heartbeat of our booking business. Watch how the blue (not canceled) and orange (canceled) bars rise and fall together throughout the year.
@@ -93,7 +93,7 @@ This monthly view reveals the heartbeat of our booking business. Watch how the b
 
 ### 5. **Geographic Analysis: The Portugal Problem**
 
-![Top 10 Countries with Cancellations](report_images/5_top_countries.png)
+![Top 10 Countries with Cancellations](https://github.com/muhammad102331-hash/Hotel_Booking/blob/main/%F0%9F%93%88%20Visual%20Assets/report_images/5_top_countries.png)
 
 **The Striking Visual:**
 The pie chart reveals something shocking - a massive slice (70.8%) belongs to Portugal. This single country dominates cancellations, making all other countries look tiny in comparison.
@@ -141,7 +141,7 @@ The pie chart reveals something shocking - a massive slice (70.8%) belongs to Po
 
 ### 7. **Price Comparison: The Cancellation-Price Connection**
 
-![ADR: Cancelled vs Not Cancelled (2016-2017)](report_images/6_adr_comparison.png)
+![ADR: Cancelled vs Not Cancelled (2016-2017)](https://github.com/muhammad102331-hash/Hotel_Booking/blob/main/%F0%9F%93%88%20Visual%20Assets/report_images/6_adr_comparison.png)
 
 **What the Chart Reveals:**
 The red line (canceled bookings) and green line (completed bookings) tell parallel stories with an interesting twist - they move together, but the red line often sits slightly higher.
